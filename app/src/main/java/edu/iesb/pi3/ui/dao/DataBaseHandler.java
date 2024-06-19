@@ -20,16 +20,25 @@ public final class DataBaseHandler extends SQLiteOpenHelper {
     public void onCreate(@Nullable SQLiteDatabase db) {
         final SQLiteDatabase dbLocal = db != null ? db : getWritableDatabase();
 
+        final String createTableLogin =
+                "CREATE TABLE IF NOT EXISTS " + DadosLogin.getTbLogin() + " (" +
+                        DadosLogin.getId() + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        DadosLogin.getCliente() + " TEXT, " +
+                        DadosLogin.getSenha() + " TEXT)";
+        ;
+
         final String createTableClientes =
                 "CREATE TABLE IF NOT EXISTS " + DadosCliente.getTbClientes() + " (" +
                         DadosCliente.getKeyId() + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        DadosCliente.getIdCliente() + " INTEGER " +
                         DadosCliente.getNome() + " TEXT, " +
                         DadosCliente.getEndereco() + " TEXT, " +
                         DadosCliente.getEmail() + " TEXT, " +
                         DadosCliente.getDdd() + " TEXT, " +
                         DadosCliente.getTelefone() + " TEXT, " +
                         DadosCliente.getFoto() + " BLOB, " +
-                        DadosCliente.getCpf() + " TEXT)";
+                        DadosCliente.getCpf() + " TEXT " +
+                        " FOREIGN KEY (" + DadosCliente.getIdCliente() + ") REFERENCES " + DadosLogin.getTbLogin() + "(" + DadosLogin.getId() + ")) ";
 
         dbLocal.execSQL(createTableClientes);
 
@@ -37,10 +46,10 @@ public final class DataBaseHandler extends SQLiteOpenHelper {
                 "CREATE TABLE IF NOT EXISTS " + DadosConta.getTbConta() + " (" +
                         DadosConta.getKeyId() + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         DadosConta.getConta() + " INTEGER, " +
-                        " FOREIGN KEY (" + DadosConta.getConta() + ") REFERENCES " + DadosCliente.getTbClientes() + "(" + DadosCliente.getKeyId() + "), " +
                         DadosConta.getAgencia() + " TEXT, " +
                         DadosConta.getSaldo() + " INTEGER, " +
-                        DadosConta.getCredito() + " TEXT)";
+                        DadosConta.getCredito() + " TEXT, " +
+                        " FOREIGN KEY (" + DadosConta.getConta() + ") REFERENCES " + DadosCliente.getTbClientes() + "(" + DadosCliente.getKeyId() + ")) ";
 
         dbLocal.execSQL(createTableContas);
 

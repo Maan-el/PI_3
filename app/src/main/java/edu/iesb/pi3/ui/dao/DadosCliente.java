@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Contract;
 final class DadosCliente {
     private static final String tbClientes = " tb_clientes ";
     private static final String keyId = " id ";
+    private static final String idCliente = " cliente ";
     private static final String nome = " nome ";
     private static final String endereco = " endereco ";
     private static final String email = " email ";
@@ -24,6 +25,10 @@ final class DadosCliente {
     @Contract(pure = true)
     public static String getKeyId() {
         return keyId;
+    }
+
+    public static String getIdCliente() {
+        return idCliente;
     }
 
     @Contract(pure = true)
