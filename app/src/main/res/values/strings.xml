@@ -4,4 +4,8 @@
     <string name="title_dashboard">Cartões</string>
     <string name="title_notifications">Perfill</string>
     <string name="descricao_foto_usuario">Foto do usuário</string>
+    <string name="descricao_logo_da_empresa">Logo da empresa</string>
+    <string name="perfil">Perfil</string>
+    <string name="nome">Nome do usuário</string>
+    <string name="cartoes">Cartões</string>
 </resources>

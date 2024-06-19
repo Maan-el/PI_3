@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/activity_horizontal_margin"
         android:paddingVertical="@dimen/activity_vertical_margin"
-        android:text="Cartões"
+        android:text="@string/cartoes"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/logo_cartao"
         app:layout_constraintStart_toEndOf="@id/logo_cartao"
