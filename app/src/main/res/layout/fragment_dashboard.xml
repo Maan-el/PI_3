@@ -6,8 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/logo_cartao"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        android:paddingVertical="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        app:strokeWidth="1dp" />
+
     <TextView
-        android:id="@+id/text_dashboard"
+        android:id="@+id/Boas_vindas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        android:paddingVertical="@dimen/activity_vertical_margin"
+        android:text="Cartões"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/logo_cartao"
+        app:layout_constraintStart_toEndOf="@id/logo_cartao"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/text_notifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

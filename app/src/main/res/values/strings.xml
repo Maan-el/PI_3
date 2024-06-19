@@ -3,4 +3,5 @@
     <string name="title_home">Início</string>
     <string name="title_dashboard">Cartões</string>
     <string name="title_notifications">Perfill</string>
+    <string name="descricao_foto_usuario">Foto do usuário</string>
 </resources>
